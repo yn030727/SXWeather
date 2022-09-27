@@ -1,0 +1,5 @@
+<resources>
+    //将布局中显示的文字进行整合，放到strings.xml中，在布局中引用
+    <string name="app_name">SXWeather</string>
+    <string name="Edit_City_Which">请输入您要搜索的城市</string>
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawerLayout">
+    //我们在SwipeRefreshLayout外面又嵌套了一层DrawerLayout
+    //第一个子控件显示我们主界面的内容（关于天气的相关信息）
+    //第二个子控件的位置添加了用于搜索全球城市的数据Fragment
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefresh">
+        //第三板块我们再ScrollView先嵌套了一个SwipeRefreshLayout
+        //这样ScrollView就具有下拉刷新功能了
+        <ScrollView
+            android:id="@+id/weatherLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            android:visibility="invisible">
+            //我们将我们刚才写的now_weather  forecast  life_index引入这个天气界面的布局当中
+            //最外层布局使用了一个ScrollView，因为天气界面的内容需要显示的东西比较多，所以ScrollView就可以通过滚动方式查看屏幕以外的内容，由于ScrollView内部只允许存在一个子布局，所以我们写了一个LinearLayout
+            //我们在这里将我们的ScrollView隐藏了起来，不然空数据的界面看上去会很奇怪，等到天气数据请求成功之后，会通过代码的方式将我们的ScrollView显示出来
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <include layout="@layout/now_weather"/>
+                <include layout="@layout/forecast"/>
+                <include layout="@layout/life_index"/>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/colorPrimary">
+        <fragment
+            android:id="@+id/placeFragment"
+            android:name="com.example.sxweather.ui.place.PlaceFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="25dp"/>
+
+    </FrameLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

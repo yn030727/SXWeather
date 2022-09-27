@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp">
+    //这个子项布局包含了3个TextView和1个ImageView，分别用于显示天气预报的日期，天气的图标，天气的情况
+    //以及当天的最低温度和最高温度
+    <TextView
+        android:id="@+id/dateInfo"
+        android:layout_weight="4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"/>
+    <ImageView
+        android:id="@+id/skyIcon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+    <TextView
+        android:id="@+id/skyInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/temperatureInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:layout_gravity="center_vertical"
+        android:gravity="end"/>
+
+</LinearLayout>
