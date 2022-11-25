@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:src="@drawable/bg3_place"/>
+        android:src="@drawable/bg_place"/>
     //搜索城市的数据的功能我们在后面还会服用，所以就不建议写在Activity里面，可以写在Fragment
     //这样当我们复用的时候直接在布局里面引入该Fragment即可
     <LinearLayout
@@ -41,7 +41,8 @@
             android:layout_weight="16"
             android:background="@drawable/enter_change"
             android:paddingStart="10dp"
-            android:paddingEnd="10dp" />
+            android:paddingEnd="10dp"
+            />
     </LinearLayout>
     //在RecyclerView中对搜索出来的结果进行展示
     //之后在里面加载的布局我们可以用卡片式布局将

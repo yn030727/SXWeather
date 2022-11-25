@@ -117,7 +117,6 @@ public class PlaceFragment extends Fragment {
                         }
                     }
                 });
-                /* //4.当输入框为空的
                 if(nowText.isEmpty()){
                     //我们将RecyclerView隐藏，并将我们的背景图显示出来
                     recyclerView.setVisibility(View.GONE);
@@ -132,7 +131,7 @@ public class PlaceFragment extends Fragment {
                     //有数据的时候，开始进行搜索操作
                     placeViewModel.searchPlaces(nowText);
                     Log.d("PlaceFragment",""+placeViewModel.mutableLiveData.getValue());
-                }*/
+                }
             }
             @Override
             public void afterTextChanged(Editable s) {
